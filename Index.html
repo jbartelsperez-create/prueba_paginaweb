@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet en la Educación</title>
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #002147;
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.2rem;
+    }
+    nav {
+      display: flex;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #c9a227;
+    }
+
+    /* ---------- MENU HAMBURGUESA ---------- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* ---------- SECCIONES ---------- */
+    section {
+      padding: 100px 20px;
+      margin-top: 60px;
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section:nth-child(even) {
+      background: #e9ecef;
+    }
+    section h2 {
+      margin-bottom: 15px;
+      color: #002147;
+    }
+
+    /* ---------- BOTÓN VOLVER ARRIBA ---------- */
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 99;
+      font-size: 18px;    /* Mas pequeño */
+      border: none;
+      outline: none;
+      background-color: #002147; /* Azul oscuro */
+      color: white;
+      cursor: pointer;
+      padding: 12px 12px;    /* Boton mas compacto */
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    }
+    #backToTop:hover {
+      background-color: #c9a227;
+      animation: pulseGlow 1.8s infinite;
+      transform: scale(1.1);
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px 3px rgba(201, 162, 39, 0.4); }
+      50% { box-shadow: 0 0 20px 8px rgba(201, 162, 39, 0.6); }
+      100% { box-shadow: 0 0 10px 3px rgba(201, 162, 39, 0.4); }
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #002147;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Internet en la Educación</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#index">Inicio</a></li>
+        <li><a href="#internet">Internet en la Educación</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIONES -->
+  <section id="index">
+    <h2>Inicio</h2>
+    <p>Bienvenidos al sitio web sobre el impacto del Internet en la educación. Aquí exploraremos cómo esta herramienta transforma los procesos de aprendizaje.</p>
+  </section>
+
+  <section id="internet">
+    <h2>Internet en la Educación</h2>
+    <p>El Internet ofrece múltiples formas de acceso a la información, investigación y colaboración entre estudiantes y docentes. Su uso responsable fortalece los procesos académicos.</p>
+  </section>
+
+  <section id="herramientas">
+    <h2>Herramientas</h2>
+    <p>Aquí encontrarás recursos como documentales, entrevistas, videos y herramientas tecnológicas para aprovechar al máximo el Internet en tu aprendizaje.</p>
+  </section>
+
+  <section id="tips">
+    <h2>Tips</h2>
+    <p>Algunos consejos para un uso responsable del Internet: verifica fuentes, administra tu tiempo y utiliza plataformas seguras para el aprendizaje.</p>
+  </section>
+
+  <section id="testimonios">
+    <h2>Testimonios</h2>
+    <p>Estudiantes de grado décimo del colegio La Presentación de Duitama comparten sus experiencias sobre el impacto positivo del Internet en su formación académica.</p>
+  </section>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="backToTop" title="Volver arriba">↑</button>
+
+  <script>
+    // ---------- MENÚ HAMBURGUESA ----------
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+
+    // ---------- ANIMACIÓN SECCIONES AL SCROLL ----------
+    const sections = document.querySelectorAll("section");
+
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      sections.forEach(sec => {
+        const sectionTop = sec.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", showOnScroll);
+    window.addEventListener("load", showOnScroll);
+
+    // ---------- BOTÓN VOLVER ARRIBA ----------
+    const backToTop = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
